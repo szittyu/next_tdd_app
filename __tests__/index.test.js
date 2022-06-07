@@ -1,5 +1,5 @@
 import React from 'react'
-import { getByRole, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import Home from '../pages/index'
 
 describe("Home page", () => {
@@ -19,7 +19,17 @@ describe("Home page", () => {
         expect(searchInput).toHaveAccessibleName("Search")
     })
 
-    // it("renders all products", () => {
+    it("renders all products", () => {
+        render(<Home products={[]} categories={[]} />)
+    });
+    // it("renders all categories", () => {
 
-    // })
+    // });
+    // it("renders 1 product per category", () => {
+
+    // });
+    // it("show search results when search item is not empty", () => {
+
+    // });
+
 })
