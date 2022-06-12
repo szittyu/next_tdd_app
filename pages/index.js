@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import commerce from '../lib/commerce'
+import Product from "../components/Product/Product";
 import Head from 'next/head'
 
 export async function getStaticProps(context) {
-  const { data: products } = await commerce.products.list()
-  const { data: categories } = await commerce.categories.list()
+  const { data: products } = await commerce.products.list();
+  const { data: categories } = await commerce.categories.list();
 
   return {
     props: { products, categories },
-    revalidate: 30
-  }
+    revalidate: 30,
+  };
 }
 
 
-export default function Home({ products, categories }) {
+export default function Home({ products, categories, addToCart }) {
+  console.log(products, categories)
   const [searchTerm, setSearchTerm] = useState("")
   return (
     <div className="flex flex-col justify-center items-center">
@@ -71,13 +73,19 @@ export default function Home({ products, categories }) {
               })}
             </ul>
 
-            <h2
-              id="all-products-heading"
-              className="text-xl my-10 font-bold"
-            >All Products</h2>
+            <h2 id="all-products-heading">All Products</h2>
             <ul aria-labelledby="all-products-heading">
               {products.map((product) => {
-                return <li key={product.id} className="list-disc">{product.name}</li>;
+                return (
+                  <li key={product.id}>
+                    <Product
+                      product={product}
+                      addToCart={() => {
+                        addToCart(product.id);
+                      }}
+                    />
+                  </li>
+                );
               })}
             </ul>
           </>
