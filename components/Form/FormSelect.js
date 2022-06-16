@@ -3,7 +3,7 @@ import React from "react";
 export default function FormSelect({ title, array, register, callback }) {
     return (
         <div className="form-elem">
-            <label htmlFor={title}>{title}</label>
+            <label htmlFor={title}>{title}:</label>
             <select
                 id={title}
                 {...register(title, { required: true })}

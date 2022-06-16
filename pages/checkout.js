@@ -8,7 +8,7 @@ export default function Checkout({ cart, refreshCart }) {
     const [checkoutToken, setCheckoutToken] = useState();
     const [shippingData, setShippingData] = useState();
 
-    console.log(cart)
+    console.log(checkoutToken)
 
     useEffect(() => {
         async function cartHandler() {
@@ -49,10 +49,10 @@ export default function Checkout({ cart, refreshCart }) {
     };
 
     return (
-        <div>
+        <div className="pt-20 ml-10 mb-10">
             {checkoutToken ? (
                 <>
-                    <h3>Step {activeStep + 1} :</h3>
+                    <h3>Step {activeStep + 1}:</h3>
 
                     {steps[activeStep]}
                 </>

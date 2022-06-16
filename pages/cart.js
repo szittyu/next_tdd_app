@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from 'next/image'
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 export default function CartDetail({ cart, updateQuantity, emptyCart }) {
     const [loading, setLoading] = useState();
@@ -10,10 +11,10 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
         await updateQuantity(quantity, productID);
         setLoading();
     };
-
+    console.log(cart)
     if (!cart) return <span>Loading ...</span>;
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center pt-16">
             <Head>
                 <title>TDD App | CART</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -24,12 +25,12 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                     <div>
                         <h3
                             className="text-xl font-bold my-10 underline"
-                        >Cart total price : {cart.subtotal.formatted_with_symbol}</h3>
+                        >Cart total price: {cart.subtotal.formatted_with_code}</h3>
 
                         <h4
                             id="cart-items-heading"
                             className="text-lg font-bold"
-                        >Cart items :</h4>
+                        >Cart items: </h4>
                         <ul aria-labelledby="cart-items-heading">
                             {cart.line_items.map((item) => {
                                 return (
@@ -38,33 +39,41 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                                             <p className="font-medium">Product name: {item.name}</p>
                                             <Image src={item.image.url} alt="product image" height="70" width="70" />
                                         </div>
-                                        <small>
-                                            {item.price.formatted_with_symbol} X {item.quantity} ={" "}
-                                            {item.line_total.formatted_with_symbol}
-                                        </small>
+                                        <p>
+                                            {item.price.formatted_with_code} X {item.quantity} ={" "}
+                                            {item.line_total.formatted_with_code}
+                                        </p>
 
                                         <div>
                                             {loading === item.id ? (
-                                                "updating"
+                                                <div
+                                                    className="flex flex-row justify-center items-center"
+                                                >
+                                                    <p>updating quantity...</p>
+                                                </div>
+
                                             ) : (
-                                                <>
-                                                    <button
-                                                        onClick={() => {
-                                                            handleUpdateQuantity(item.quantity + 1, item.id);
-                                                        }}
-                                                    >
-                                                        +
+                                                <div
+                                                    className="flex flex-row justify-center items-center"
+                                                >
+                                                    <button>
+                                                        <AiOutlinePlus
+                                                            className="border-2 rounded-full w-7 h-7 hover:bg-black transition duration-300 hover:text-white"
+                                                            onClick={() => {
+                                                                handleUpdateQuantity(item.quantity + 1, item.id);
+                                                            }}
+                                                        />
                                                     </button>
-                                                    <span>{item.quantity}</span>
-                                                    <button
-                                                        onClick={() => {
-                                                            handleUpdateQuantity(item.quantity - 1, item.id);
-                                                        }}
-                                                    >
-                                                        {" "}
-                                                        -{" "}
+                                                    <span className="mx-2">{item.quantity}</span>
+                                                    <button>
+                                                        <AiOutlineMinus
+                                                            className="border-2 rounded-full w-7 h-7 hover:bg-black transition duration-300 hover:text-white"
+                                                            onClick={() => {
+                                                                handleUpdateQuantity(item.quantity - 1, item.id);
+                                                            }}
+                                                        />
                                                     </button>
-                                                </>
+                                                </div>
                                             )}
                                         </div>
                                     </li>
@@ -72,9 +81,13 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                             })}
                         </ul>
 
-                        <div>
-                            <button onClick={emptyCart}>Empty Cart</button>
-                            <button>
+                        <div className="flex flex-row justify-between w-full mt-5">
+                            <button
+                                className="border-2 rounded-full w-24 hover:bg-black transition duration-300 hover:text-white"
+                                onClick={emptyCart}>Empty Cart</button>
+                            <button
+                                className="border-2 rounded-full w-24 hover:bg-black transition duration-300 hover:text-white"
+                            >
                                 <Link href="/checkout">
                                     <a>Checkout</a>
                                 </Link>

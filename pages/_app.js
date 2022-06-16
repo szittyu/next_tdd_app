@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import commerce from "../lib/commerce";
-import Navbar from "../components/Navbar/Navbar";
 import "../styles/globals.css";
+import Layout from "../components/Layout/Layout";
+
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState();
+  const [products, setProduct] = useState();
+  const [searchTerm, setSearchTerm] = useState("")
+  const [searchbarState, setSearchbarState] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
+      const { data: products } = await commerce.products.list();
       const response = await commerce.cart.retrieve();
+      setProduct(products)
       setCart(response);
     }
     fetchData()
@@ -52,16 +58,27 @@ function MyApp({ Component, pageProps }) {
   //
   return (
     <>
-      <Navbar cart={cart} />
-      <Component
-        {...pageProps}
+      <Layout
         cart={cart}
-        addToCart={addToCart}
-        emptyCart={emptyCart}
-        refreshCart={refreshCart}
-        removeItem={removeItem}
-        updateQuantity={updateQuantity}
-      />
+        products={products}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        searchbarState={searchbarState}
+        setSearchbarState={setSearchbarState}
+      >
+        <Component
+          {...pageProps}
+          cart={cart}
+          searchTerm={searchTerm}
+          searchbarState={searchbarState}
+          setSearchbarState={setSearchbarState}
+          addToCart={addToCart}
+          emptyCart={emptyCart}
+          refreshCart={refreshCart}
+          removeItem={removeItem}
+          updateQuantity={updateQuantity}
+        />
+      </Layout>
     </>
   );
 }

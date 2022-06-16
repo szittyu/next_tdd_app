@@ -22,10 +22,10 @@ export default function CountrySelect({
     const [shippingOptions, setShippingOptions] = useState([]);
     const [selectedShippingOption, setSelectedShippingOption] = useState();
 
-    console.log(shippingOptions)
+    console.log(countries)
 
     useEffect(() => {
-        async function country() {
+        async function setCountry() {
             if (checkoutToken) {
                 await commerce.services
                     .localeListShippingCountries(checkoutToken.id)
@@ -40,11 +40,11 @@ export default function CountrySelect({
                     .catch((err) => console.error(err));
             }
         }
-        country()
+        setCountry()
     }, [checkoutToken, setValue]);
 
     useEffect(() => {
-        async function selectCountry() {
+        async function setSubdivision() {
             setDisabled(true);
             setLoading("subdivisions");
             if (selectedCountry) {
@@ -62,11 +62,11 @@ export default function CountrySelect({
 
             }
         }
-        selectCountry()
+        setSubdivision()
     }, [checkoutToken.id, selectedCountry, setDisabled, setValue]);
 
     useEffect(() => {
-        async function subDivision() {
+        async function setShippingOption() {
             setDisabled(true);
             setLoading("true");
             if (selectedSubdivision) {
@@ -95,7 +95,7 @@ export default function CountrySelect({
 
             }
         }
-        subDivision()
+        setShippingOption()
     }, [checkoutToken.id, selectedCountry, selectedSubdivision, setDisabled, setValue]);
 
     if (initialLoading)

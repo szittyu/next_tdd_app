@@ -71,41 +71,45 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
                 <>
                     <h3>
                         {" "}
-                        Thanks for ordering
-                        <span>
-                            {order.customer.firstname} {order.customer.lastname}
+                        Thanks for ordering&nbsp;
+                        <span className="font-medium">
+                            {order.customer.firstname} {order.customer.lastname}&nbsp;
                         </span>
-                        <small>your order reference : {order.customer_reference}</small>
+                        <span>your order reference:
+                            <span className="font-medium"> {order.customer_reference}</span>
+                        </span>
                     </h3>
 
-                    <h4> Total payment : {order.order.total.formatted_with_symbol}</h4>
+                    <h4> Total payment:
+                        <span className="font-medium"> {order.order.total.formatted_with_symbol}</span>
+                    </h4>
                 </>
             ) : (
                 <>
                     <h3>
-                        {shippingData.firstname} {shippingData.lastname}
+                        Full name: {shippingData.firstname} {shippingData.lastname}
                     </h3>
 
-                    <p>Address :{shippingData.address1}</p>
-                    <p>Email :{shippingData.email}</p>
-                    <p> City :{shippingData.city}</p>
-                    <p> Postal Zip :{shippingData.zip}</p>
-                    <p> Country Code :{shippingData.country}</p>
-                    <p> Subdivision Code :{shippingData.subdivisions}</p>
-                    <h4>Items you are buying</h4>
+                    <p>Address: {shippingData.address1}</p>
+                    <p>Email: {shippingData.email}</p>
+                    <p> City: {shippingData.city}</p>
+                    <p> Postal Zip: {shippingData.zip}</p>
+                    <p> Country Code: {shippingData.country}</p>
+                    <p> Subdivision Code: {shippingData.subdivisions}</p>
+                    <h4 className="my-5">Items you are buying:</h4>
                     <ul>
                         {checkoutToken.live.line_items.map((item) => {
                             return (
                                 <p key={item.product_name}>
-                                    {item.product_name} - {item.line_total.formatted_with_symbol}{" "}
-                                    (Quantity :{item.quantity} )
+                                    {item.product_name} - {item.line_total.formatted_with_code}{" "}
+                                    (Quantity: {item.quantity} )
                                 </p>
                             );
                         })}
                     </ul>
-                    <p>
-                        Total : {checkoutToken.live.total.formatted_with_symbol} +
-                        {shippingcharges.price.formatted_with_symbol}(Shipping Charges)
+                    <p className="mb-5">
+                        Total : {checkoutToken.live.total.formatted_with_code} +
+                        {shippingcharges.price.formatted_with_code}(Shipping Charges)
                     </p>
 
                     {error && <h3>Error : {error}</h3>}
@@ -148,7 +152,12 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
                                 }}
                                 register={register}
                             />
-                            <button type="submit">Pay Now</button>
+                            <button
+                                className="border-2 rounded-lg w-24 mt-2 hover:bg-gray-200"
+                                type="submit"
+                            >
+                                Pay Now
+                            </button>
                         </form>
                     )}
                 </>

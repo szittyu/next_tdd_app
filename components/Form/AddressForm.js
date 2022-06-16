@@ -15,7 +15,7 @@ const addressparams = [
 export default function AddressForm({ checkoutToken, setShippingData }) {
     const { handleSubmit, register, setValue } = useForm();
     const [disabled, setDisabled] = useState(true);
-    console.log(checkoutToken)
+
     const submitData = (data) => {
         setShippingData(data);
     };
@@ -32,7 +32,11 @@ export default function AddressForm({ checkoutToken, setShippingData }) {
                 register={register}
             />
 
-            <button disabled={disabled} type="submit">
+            <button
+                className="border-2 rounded-lg w-24 mt-2 hover:bg-gray-200"
+                disabled={disabled}
+                type="submit"
+            >
                 Next
             </button>
         </form>
