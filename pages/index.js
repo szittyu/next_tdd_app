@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import commerce from '../lib/commerce'
 import ProductCard from "../components/Product/ProductCard";
 import Head from 'next/head'

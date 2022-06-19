@@ -3,9 +3,9 @@ import React from "react"
 const Footer = () => {
     return (
         <footer
-            className=""
+            className="flex flex-row justify-end mr-10 my-10"
         >
-            <p>This is the footer!</p>
+            <p>&copy; 2022 Online Store · All rights reserved</p>
         </footer>
     );
 }
