@@ -44,7 +44,7 @@ export default function Navbar({ cart, products, searchTerm, setSearchTerm, sear
                     </nav>
                 </Slide>)
                 :
-                (<Slide direction="left" triggerOnce duration={500}>
+                (
                     <nav className="flex flex-row w-full h-16 bg-white justify-between items-center fixed z-20">
                         <div className="ml-10">
                             <Link href="/"><a>Home</a ></Link >
@@ -71,7 +71,7 @@ export default function Navbar({ cart, products, searchTerm, setSearchTerm, sear
                             />
                         </div>
                     </nav >
-                </Slide>)
+                )
             }
 
         </>
