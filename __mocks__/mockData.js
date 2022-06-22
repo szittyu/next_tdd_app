@@ -22,6 +22,9 @@ export const mockCart = {
         {
             id: "item_7RyWOwmK5nEa2V",
             name: "Monitor",
+            image: {
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+            },
             permalink: "e1234",
             price: { raw: 850, formatted_with_symbol: "€850" },
             line_total: { formatted_with_symbol: "€1700" },
@@ -30,6 +33,9 @@ export const mockCart = {
         {
             id: "cart_2",
             name: "Gaming Mouse",
+            image: {
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+            },
             permalink: "e1234",
             price: { raw: 750, formatted_with_symbol: "€750" },
             line_total: { formatted_with_symbol: "€2250" },

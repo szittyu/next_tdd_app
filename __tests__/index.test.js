@@ -33,13 +33,13 @@ describe("Home page", () => {
 
     //
 
-    it("renders all categories", () => {
-        render(<Home products={mockProducts} categories={mockCategories} />);
-        const allcategories = screen.getByRole("list", { name: /categories/i });
-        const { getAllByRole } = within(allcategories);
-        const listitems = getAllByRole("listitem", { name: /category/i });
-        expect(listitems.length).toBe(2);
-    });
+    // it("renders all categories", () => {
+    //     render(<Home products={mockProducts} categories={mockCategories} />);
+    //     const allcategories = screen.getByRole("list", { name: /categories/i });
+    //     const { getAllByRole } = within(allcategories);
+    //     const listitems = getAllByRole("listitem", { name: /category/i });
+    //     expect(listitems.length).toBe(2);
+    // });
 
     // it("renders 1 product per  category", () => {
     //   render(<Home products={mockProducts} categories={mockCategories} />);

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Fade } from "react-awesome-reveal";
 import commerce from '../lib/commerce'
 import ProductCard from "../components/Product/ProductCard";
 import Head from 'next/head'
@@ -25,7 +26,9 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
       </Head>
       <main className="flex flex-col justify-center items-center mt-16 w-full">
         <div className="w-full">
-          <h1 className="w-full text-8xl font-medium text-center my-20">Online Store</h1>
+          <Fade triggerOnce direction='up' duration={1500}>
+            <h1 className="w-full text-8xl font-medium text-center my-20">Online Store</h1>
+          </Fade>
           <div>
             {searchTerm.length > 0 && searchbarState === true ? (
               <>
@@ -64,17 +67,19 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
                   className="grid grid-cols-3 justify-center items-center mx-8" aria-labelledby="all-products-heading">
                   {products.slice(0, 6).map((product) => {
                     return (
-                      <li
-                        key={product.id}
-                        className="mx-5 my-5"
-                      >
-                        <ProductCard
-                          product={product}
-                          addToCart={() => {
-                            addToCart(product.id);
-                          }}
-                        />
-                      </li>
+                      <Fade key={product.id} triggerOnce direction='up' duration={1500}>
+                        <li
+                          key={product.id}
+                          className="mx-5 my-5"
+                        >
+                          <ProductCard
+                            product={product}
+                            addToCart={() => {
+                              addToCart(product.id);
+                            }}
+                          />
+                        </li>
+                      </Fade>
                     );
                   })}
                 </ul>
