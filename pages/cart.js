@@ -58,7 +58,7 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                                                 >
                                                     <button>
                                                         <AiOutlinePlus
-                                                            className="border-2 rounded-full w-7 h-7 hover:bg-black transition duration-300 hover:text-white"
+                                                            className="border border-black rounded-full w-7 h-7 hover:bg-black transition duration-300 hover:text-white"
                                                             onClick={() => {
                                                                 handleUpdateQuantity(item.quantity + 1, item.id);
                                                             }}
@@ -67,7 +67,7 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                                                     <span className="mx-2">{item.quantity}</span>
                                                     <button>
                                                         <AiOutlineMinus
-                                                            className="border-2 rounded-full w-7 h-7 hover:bg-black transition duration-300 hover:text-white"
+                                                            className="border border-black rounded-full w-7 h-7 hover:bg-black transition duration-300 hover:text-white"
                                                             onClick={() => {
                                                                 handleUpdateQuantity(item.quantity - 1, item.id);
                                                             }}
@@ -83,10 +83,10 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
 
                         <div className="flex flex-row justify-between w-full mt-5">
                             <button
-                                className="border-2 rounded-full w-24 hover:bg-black transition duration-300 hover:text-white"
+                                className="border border-black rounded-full w-24 hover:bg-black transition duration-300 hover:text-white"
                                 onClick={emptyCart}>Empty Cart</button>
                             <button
-                                className="border-2 rounded-full w-24 hover:bg-black transition duration-300 hover:text-white"
+                                className="border border-black rounded-full w-24 hover:bg-black transition duration-300 hover:text-white"
                             >
                                 <Link href="/checkout">
                                     <a>Checkout</a>
