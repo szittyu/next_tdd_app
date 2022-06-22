@@ -46,11 +46,11 @@ const ProductDetailPage = ({ product, addToCart }) => {
                         {product.price.formatted_with_code}
                     </div>
                     <div
-                        className="text-lg tracking-wide mb-6"
+                        className="text-lg tracking-wide pb-20"
                         dangerouslySetInnerHTML={{ __html: product.description }}
                     ></div>
                     <button
-                        className="border-2 bg-gray-200 rounded-full w-28 h-10 hover:bg-black transition duration-300 hover:text-white"
+                        className="border-2 bg-black text-white rounded-full p-4 w-44 h-16 text-xl hover:bg-white transition duration-300 hover:text-black hover:border-black"
                         onClick={() => addToCart(product.id)}
                     >
                         Add to cart

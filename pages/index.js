@@ -27,7 +27,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
       <main className="flex flex-col justify-center items-center mt-16 w-full">
         <div className="w-full">
           <Fade triggerOnce direction='up' duration={1500}>
-            <h1 className="w-full text-8xl font-medium text-center my-20">Online Store</h1>
+            <h1 className="w-full text-8xl font-medium text-center my-36">Online Store.</h1>
           </Fade>
           <div>
             {searchTerm.length > 0 && searchbarState === true ? (
@@ -91,6 +91,14 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
                       See all products
                     </button>
                   </Link>
+                </div>
+                <div className="flex flex-col justify-center w-full py-40 px-44">
+                  <Fade triggerOnce direction='up' duration={1500}>
+                    <div className="text-5xl text-center tracking-wide leading-snug">
+                      <span className="text-gray-500">Online store is a curation of essential products, handpicked for their exceptional performance and design. </span>
+                      In a world of excess, we curate essentials because we believe having fewer but better things makes life better.
+                    </div>
+                  </Fade>
                 </div>
               </>
             )}
