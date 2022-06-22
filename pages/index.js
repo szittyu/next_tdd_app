@@ -27,7 +27,11 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
       <main className="flex flex-col justify-center items-center mt-16 w-full">
         <div className="w-full">
           <Fade triggerOnce direction='up' duration={1500}>
-            <h1 className="w-full text-8xl font-medium text-center my-36">Online Store.</h1>
+            <h1
+              className={searchTerm.length > 0 && searchbarState === true ?
+                "w-full text-8xl font-medium text-center"
+                :
+                "w-full text-8xl font-medium text-center my-20"}>Online Store.</h1>
           </Fade>
           <div>
             {searchTerm.length > 0 && searchbarState === true ? (

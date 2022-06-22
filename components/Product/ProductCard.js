@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from 'react-icons/bs';
 
-export default function ProductCard({ product, addToCart }) {
+export default function ProductCard({ product }) {
     const [isHovering, setIsHovered] = useState(true);
     const onMouseEnter = () => setIsHovered(false);
     const onMouseLeave = () => setIsHovered(true);
