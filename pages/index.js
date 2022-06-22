@@ -31,7 +31,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
               className={searchTerm.length > 0 && searchbarState === true ?
                 "w-full text-8xl font-medium text-center"
                 :
-                "w-full text-8xl font-medium text-center my-20"}>Online Store.</h1>
+                "w-full text-8xl font-medium text-center my-36"}>Online Store.</h1>
           </Fade>
           <div>
             {searchTerm.length > 0 && searchbarState === true ? (
