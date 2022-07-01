@@ -39,7 +39,7 @@ export default function AddressForm({ checkoutToken, setShippingData }) {
                 className={disabled === true ?
                     "border border-white text-white bg-gray-200 rounded-full w-20 h-10 my-10"
                     :
-                    "border border-white text-white bg-black rounded-full w-20 h-10 my-10 hover:bg-white hover:text-black transition duration-300"}
+                    "border-2 border-black rounded-full w-20 h-10 my-10 hover:bg-black transition duration-300 hover:text-white"}
                 disabled={disabled}
                 type="submit"
             >

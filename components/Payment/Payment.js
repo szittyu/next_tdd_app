@@ -84,7 +84,8 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
                         <span className="font-medium"> {order.order.total.formatted_with_code}</span>
                     </h4>
                     <Link href="/">
-                        <a className="flex justify-center items-center border border-white text-white bg-black rounded-full w-60 h-10 my-10 hover:bg-white hover:text-black transition duration-300">Go back to the Homepage</a>
+                        <a className="flex justify-center items-center border border-black text-black rounded-full w-60 h-10 my-10 hover:bg-black transition duration-300 hover:text-white
+                        ">Go back to the Homepage</a>
                     </Link>
                 </>
             ) : (
@@ -127,7 +128,7 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
                         >
                             <FormInput
                                 param={{
-                                    name: "Card Number",
+                                    name: "Number",
                                     type: "number",
                                 }}
                                 register={register}
@@ -161,7 +162,7 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
                                 register={register}
                             />
                             <button
-                                className="border border-white text-white bg-black rounded-full w-24 h-10 my-10 hover:bg-white hover:text-black transition duration-300"
+                                className="border-2 border-black rounded-full w-24 h-10 my-10 hover:bg-black transition duration-300 hover:text-white"
                                 type="submit"
                             >
                                 Pay Now

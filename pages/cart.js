@@ -95,18 +95,18 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
 
                                 <div className="flex flex-row justify-between w-auto my-10 mx-20">
                                     <button
-                                        className="border border-white text-white bg-black rounded-full w-40 h-10 hover:bg-white hover:text-black transition duration-300">
+                                        className="border-2 border-black rounded-full w-40 h-10 hover:bg-black transition duration-300 hover:text-white">
                                         <Link href="/all">
                                             <a>Back to shopping</a>
                                         </Link>
                                     </button>
                                     <button
-                                        className="border border-white text-white bg-black rounded-full w-28 h-10 hover:bg-white hover:text-black transition duration-300"
+                                        className="border-2 border-black rounded-full w-28 h-10 hover:bg-black transition duration-300 hover:text-white"
                                         onClick={emptyCart}>
                                         Empty Cart
                                     </button>
                                     <button
-                                        className="border border-white text-white bg-black rounded-full w-24 h-10 hover:bg-white hover:text-black transition duration-300"
+                                        className="border-2 border-black rounded-full w-24 h-10 hover:bg-black transition duration-300 hover:text-white"
                                     >
                                         <Link href="/checkout">
                                             <a>Checkout</a>
