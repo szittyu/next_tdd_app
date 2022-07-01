@@ -100,11 +100,11 @@ export default function CountrySelect({
 
     if (initialLoading)
         return (
-            <span>Fetching countries , subdivisions and shipping options ...</span>
+            <span className="flex justify-center items-center h-10 font-medium">Loading countries , subdivisions and shipping options ...</span>
         );
 
     return (
-        <>
+        <div className="flex flex-col justify-center items-between font-medium w-2/6">
             <FormSelect
                 callback={setSelectedCountry}
                 title="country"
@@ -112,7 +112,7 @@ export default function CountrySelect({
                 register={register}
             />
             {loading === "subdivisions" ? (
-                <p>fetching subdivisions ...</p>
+                <p>loading subdivisions ...</p>
             ) : (
                 <FormSelect
                     callback={setSelectedSubdivision}
@@ -122,7 +122,7 @@ export default function CountrySelect({
                 />
             )}
             {loading.length > 0 ? (
-                <p>fetching shipping options ... </p>
+                <p className="flex justify-center items-center h-10 font-medium">loading shipping options ... </p>
             ) : (
                 <FormSelect
                     callback={setSelectedShippingOption}
@@ -131,6 +131,6 @@ export default function CountrySelect({
                     register={register}
                 />
             )}
-        </>
+        </div>
     );
 }

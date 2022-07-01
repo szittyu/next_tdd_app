@@ -17,7 +17,7 @@ export async function getStaticProps(context) {
 
 
 export default function Home({ products, categories, addToCart, searchTerm, searchbarState, setSearchbarState }) {
-
+  console.log(products)
   return (
     <div className="flex flex-col justify-center items-center">
       <Head>

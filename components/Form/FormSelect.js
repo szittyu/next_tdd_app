@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FormSelect({ title, array, register, callback }) {
     return (
-        <div className="form-elem">
+        <div className="flex flex-row justify-between items-center my-2">
             <label htmlFor={title}>{title}:</label>
             <select
                 id={title}
@@ -11,6 +11,7 @@ export default function FormSelect({ title, array, register, callback }) {
                     e.preventDefault();
                     callback(e.target.value);
                 }}
+                className="w-40 rounded-[60px]"
             >
                 {array.map((obj) => {
                     return (

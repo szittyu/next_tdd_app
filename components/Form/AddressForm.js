@@ -20,7 +20,10 @@ export default function AddressForm({ checkoutToken, setShippingData }) {
         setShippingData(data);
     };
     return (
-        <form onSubmit={handleSubmit(submitData)}>
+
+        <form onSubmit={handleSubmit(submitData)} className="flex flex-col items-center justify-center w-full rounded-[60px] bg-gray-100">
+            <h1 className="flex justify-center items-center text-3xl font-bold my-10">Fill the address fields</h1>
+
             {addressparams.map((param) => {
                 return <FormInput key={param.name} param={param} register={register} />;
             })}
@@ -33,12 +36,16 @@ export default function AddressForm({ checkoutToken, setShippingData }) {
             />
 
             <button
-                className="border-2 rounded-lg w-24 mt-2 hover:bg-gray-200"
+                className={disabled === true ?
+                    "border border-white text-white bg-gray-200 rounded-full w-20 h-10 my-10"
+                    :
+                    "border border-white text-white bg-black rounded-full w-20 h-10 my-10 hover:bg-white hover:text-black transition duration-300"}
                 disabled={disabled}
                 type="submit"
             >
                 Next
             </button>
         </form>
+
     );
 }

@@ -2,13 +2,12 @@ import AddressForm from "../components/Form/AddressForm";
 import Payment from "../components/Payment/Payment";
 import commerce from "../lib/commerce";
 import React, { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 export default function Checkout({ cart, refreshCart }) {
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState();
     const [shippingData, setShippingData] = useState();
-
-    console.log(checkoutToken)
 
     useEffect(() => {
         async function cartHandler() {
@@ -49,15 +48,16 @@ export default function Checkout({ cart, refreshCart }) {
     };
 
     return (
-        <div className="pt-20 ml-10 mb-10">
-            {checkoutToken ? (
-                <>
-                    <h3>Step {activeStep + 1}:</h3>
 
+        <div className="">
+            {checkoutToken ? (
+                <Fade triggerOnce direction="left" duration={1500} className="flex flex-col justify-center items-center w-auto pt-20 mx-10 mb-10">
                     {steps[activeStep]}
-                </>
+                </Fade>
             ) : (
-                "loading ..."
+                <div className="flex flex-row justify-center items-center w-full pt-20 h-36 font-bold text-2xl">
+                    Loading...
+                </div>
             )}
         </div>
     );
