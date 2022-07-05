@@ -17,7 +17,7 @@ export default function All({ products, addToCart }) {
         <div className="flex flex-col justify-center pt-16 w-full">
             <h1 className="w-full text-8xl text-center my-10">All</h1>
             <ul
-                className="grid grid-cols-1 justify-center items-center mx-4 sm:grid-cols-3 md:mx-8" aria-labelledby="all-products-heading">
+                className="grid grid-cols-1 justify-center items-center mx-4 md:grid-cols-3 md:mx-8" aria-labelledby="all-products-heading">
                 {products.map((product) => {
                     return (
                         <Fade key={product.id} triggerOnce duration={1500}>
