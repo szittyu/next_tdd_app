@@ -115,7 +115,7 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                             </div>
                         </div>
                     ) : (
-                        <p className="flex flex-row justify-center items-center h-36 font-bold text-2xl">Your Cart is empty, please buy something from our store</p>
+                        <div className="flex flex-row justify-center text-center items-center h-36 font-bold text-2xl">Your Cart is empty, please buy something from our store</div>
                     )}
                 </Fade>
             </main>

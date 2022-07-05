@@ -29,7 +29,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
           <Fade triggerOnce direction='up' duration={1500}>
             <h1
               className={searchTerm.length > 0 && searchbarState === true ?
-                "w-full text-8xl font-medium text-center"
+                "w-full text-7xl font-medium text-center my-10 md:text-8xl md:my-20 lg:my-36"
                 :
                 "w-full text-7xl font-medium text-center my-10 md:text-8xl md:my-20 lg:my-36"}>Online Store.</h1>
           </Fade>
@@ -44,7 +44,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
                 </h2>
                 <ul
                   aria-labelledby="search-results-heading"
-                  className="grid grid-cols-2 justify-center items-center mx-8 sm:grid-cols-3"
+                  className="grid grid-cols-2 justify-center items-center mx-8 md:grid-cols-3"
                 >
                   {products
                     .filter((product) =>
@@ -53,7 +53,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
                     .map((product) => {
                       return <li
                         key={product.id}
-                        className="mx-5 my-5"
+                        className="mx-3 my-5 md:mx-5"
                       >
                         <ProductCard
                           product={product}
