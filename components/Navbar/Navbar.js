@@ -46,16 +46,16 @@ export default function Navbar({ cart, products, searchTerm, setSearchTerm, sear
                 :
                 (
                     <nav className="flex flex-row w-full h-16 bg-white justify-between items-center fixed z-20">
-                        <div className="ml-10">
+                        <div className="ml-5 md:ml-10">
                             <Link href="/"><a>Home</a ></Link >
                         </div >
-                        <div className="flex flex-row justify-between w-1/5">
+                        <div className="flex flex-row justify-between w-3/6">
                             <Link href="/all"><a>All</a></Link>
                             <Link href="/categories/kitchen"><a>Kitchen</a></Link>
                             <Link href="/categories/tech"><a>Tech</a></Link>
                             <Link href="/categories/work"><a>Work</a></Link>
                         </div>
-                        <div className="mr-10 flex flex-row justify-between items-center w-20">
+                        <div className="mr-5 md:mr-10 flex flex-row justify-between items-center w-20">
                             <div className="flex flex-row justify-between items-center w-10 hover:cursor-pointer">
                                 <Link href="/cart"><a>Cart</a></Link>
                                 <p>{cart ? cart.total_items : tempCartItems}</p>
