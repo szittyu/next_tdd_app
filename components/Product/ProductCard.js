@@ -14,8 +14,8 @@ export default function ProductCard({ product }) {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}>
                 <div className={isHovering ?
-                    "flex flex-col justify-center bg-gray-100 rounded-xl h-[350px] items-center mx-auto w-full transition duration-300" :
-                    "flex flex-col justify-center bg-gray-300 rounded-xl h-[350px] items-center mx-auto w-full transition duration-300"}>
+                    "flex flex-col justify-center bg-gray-100 rounded-xl h-[200px] items-center mx-auto w-full transition duration-300 md:h-[250px] lg:h-[350px]" :
+                    "flex flex-col justify-center bg-gray-300 rounded-xl h-[200px] items-center mx-auto w-full transition duration-300 md:h-[250px] lg:h-[350px]"}>
                     <div className="h-4/5">
                         <Image src={product.image.url} width="300" height="300" alt="image" />
                     </div>

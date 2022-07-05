@@ -31,7 +31,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
               className={searchTerm.length > 0 && searchbarState === true ?
                 "w-full text-8xl font-medium text-center"
                 :
-                "w-full text-8xl font-medium text-center my-36"}>Online Store.</h1>
+                "w-full text-7xl font-medium text-center my-10 md:text-8xl md:my-20 lg:my-36"}>Online Store.</h1>
           </Fade>
           <div>
             {searchTerm.length > 0 && searchbarState === true ? (
@@ -44,7 +44,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
                 </h2>
                 <ul
                   aria-labelledby="search-results-heading"
-                  className="grid grid-cols-3 justify-center items-center mx-8"
+                  className="grid grid-cols-2 justify-center items-center mx-8 sm:grid-cols-3"
                 >
                   {products
                     .filter((product) =>
@@ -68,7 +68,7 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
             ) : (
               <>
                 <ul
-                  className="grid grid-cols-3 justify-center items-center mx-8" aria-labelledby="all-products-heading">
+                  className="grid grid-cols-2 justify-center items-center mx-8 md:grid-cols-3" aria-labelledby="all-products-heading">
                   {products.slice(0, 6).map((product) => {
                     return (
                       <Fade key={product.id} triggerOnce direction='up' duration={1500}>
@@ -96,9 +96,9 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
                     </button>
                   </Link>
                 </div>
-                <div className="flex flex-col justify-center w-full py-40 px-44">
+                <div className="flex flex-col justify-center w-full py-16 px-10 md:py-24 md:px-16 lg:py-32 lg:px-44">
                   <Fade triggerOnce direction='up' duration={1500}>
-                    <div className="text-5xl text-center tracking-wide leading-snug">
+                    <div className="text-xl text-center tracking-wide leading-snug md:text-4xl lg:text-5xl">
                       <span className="text-gray-500">Online store is a curation of essential products, handpicked for their exceptional performance and design. </span>
                       In a world of excess, we curate essentials because we believe having fewer but better things makes life better.
                     </div>
