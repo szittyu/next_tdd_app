@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
                 <div className={isHovering ?
                     "flex flex-col justify-center bg-gray-100 rounded-xl h-[200px] items-center mx-auto w-full transition duration-300 md:h-[250px] lg:h-[350px]" :
                     "flex flex-col justify-center bg-gray-300 rounded-xl h-[200px] items-center mx-auto w-full transition duration-300 md:h-[250px] lg:h-[350px]"}>
-                    <div className="h-4/6 md:h-4/5">
+                    <div className="h-5/6 md:h-4/5">
                         <Image src={product.image.url} width="300" height="300" alt="image" />
                     </div>
                     <div className="flex flex-col justify-end items-end h-1/5 w-full pr-2 pb-2">
