@@ -68,13 +68,13 @@ export default function Home({ products, categories, addToCart, searchTerm, sear
             ) : (
               <>
                 <ul
-                  className="grid grid-cols-2 justify-center items-center mx-8 md:grid-cols-3" aria-labelledby="all-products-heading">
+                  className="grid grid-cols-2 justify-center items-center mx-4 md:grid-cols-3 md:mx-8" aria-labelledby="all-products-heading">
                   {products.slice(0, 6).map((product) => {
                     return (
                       <Fade key={product.id} triggerOnce direction='up' duration={1500}>
                         <li
                           key={product.id}
-                          className="mx-5 my-5"
+                          className="mx-3 my-5 md:mx-5"
                         >
                           <ProductCard
                             product={product}
