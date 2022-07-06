@@ -100,7 +100,7 @@ export default function CountrySelect({
 
     if (initialLoading)
         return (
-            <span className="flex justify-center items-center h-10 font-medium">Loading countries , subdivisions and shipping options ...</span>
+            <span className="text-center h-10 font-medium w-5/6 md:w-3/6 lg:w-1/5">Loading countries , subdivisions and shipping options ...</span>
         );
 
     return (

@@ -25,7 +25,7 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                 <Fade triggerOnce direction="left" duration={1500}>
                     {cart.subtotal.raw > 0 ? (
                         <div className="flex flex-col justify-center w-auto md:mx-20">
-                            <div className="bg-gray-100 rounded-[60px]">
+                            <div className="bg-gray-100 rounded-[60px] px-3">
                                 <h1 className="flex justify-center items-center text-3xl font-bold my-10">
                                     <FaShoppingCart />&nbsp;
                                     Your Cart
