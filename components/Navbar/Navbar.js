@@ -76,7 +76,7 @@ export default function Navbar({ cart, products, searchTerm, setSearchTerm, sear
 
                                 :
                                 <GiHamburgerMenu
-                                    className="ml-10 hover:cursor-pointer"
+                                    className="ml-10 h-6 w-6 hover:cursor-pointer"
                                     onClick={() => handleHamburgerMenu()}
                                 />
                             }
