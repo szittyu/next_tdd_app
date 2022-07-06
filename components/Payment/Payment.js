@@ -123,7 +123,7 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
 
                     {error && <h3>Error : {error}</h3>}
                     {loading ? (
-                        <p className="text-center w-full h-36 font-bold text-xl md:text-2xl">Wait while we process your data...</p>
+                        <p className="text-center w-full h-36 font-bold text-xl mt-10 md:text-2xl">Wait while we process your data...</p>
                     ) : (
                         <form
                             onSubmit={handleSubmit(payNow)}
