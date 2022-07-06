@@ -91,7 +91,7 @@ export default function CartDetail({ cart, updateQuantity, emptyCart }) {
                                     className="flex justify-center text-lg font-bold my-10 md:text-xl md:mr-10 md:justify-end"
                                 >Cart total price: {cart.subtotal.formatted_with_code}</h3>
                             </div>
-                            <div className="bg-white mx-10 md:mx-0">
+                            <div className="bg-white mx-5 md:mx-0">
                                 <div className="flex flex-row justify-between w-auto my-10 mx-auto md:mx-20">
                                     <button
                                         className="border-2 border-black rounded-full text-xs w-28 h-10 hover:bg-black transition duration-300 hover:text-white
