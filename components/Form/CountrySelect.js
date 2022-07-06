@@ -104,7 +104,7 @@ export default function CountrySelect({
         );
 
     return (
-        <div className="flex flex-col justify-center items-between font-medium w-2/6">
+        <div className="flex flex-col justify-center items-between font-medium w-5/6 md:w-3/6 lg:w-2/6">
             <FormSelect
                 callback={setSelectedCountry}
                 title="country"

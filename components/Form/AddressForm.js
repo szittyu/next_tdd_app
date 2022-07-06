@@ -22,7 +22,7 @@ export default function AddressForm({ checkoutToken, setShippingData }) {
     return (
 
         <form onSubmit={handleSubmit(submitData)} className="flex flex-col items-center justify-center w-full rounded-[60px] bg-gray-100">
-            <h1 className="flex justify-center items-center text-3xl font-bold my-10">Fill the address fields</h1>
+            <h1 className="flex justify-center items-center text-xl font-bold my-10 md:text-3xl">Fill the address fields</h1>
 
             {addressparams.map((param) => {
                 return <FormInput key={param.name} param={param} register={register} />;

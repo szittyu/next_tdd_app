@@ -51,7 +51,7 @@ export default function Checkout({ cart, refreshCart }) {
 
         <div className="">
             {checkoutToken ? (
-                <Fade triggerOnce direction="left" duration={1500} className="flex flex-col justify-center items-center w-auto pt-20 mx-10 mb-10">
+                <Fade triggerOnce direction="left" duration={1500} className="flex flex-col justify-center items-center w-auto pt-20 mx-5 mb-10 md:mx-10">
                     {steps[activeStep]}
                 </Fade>
             ) : (
