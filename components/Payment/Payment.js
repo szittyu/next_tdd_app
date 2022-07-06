@@ -86,7 +86,7 @@ export default function Payment({ shippingData, checkoutToken, refreshCart }) {
                         <span className="font-medium"> {order.order.total.formatted_with_code}</span>
                     </h4>
                     <Link href="/">
-                        <a className="flex justify-center items-center border border-black text-black rounded-full w-60 h-10 my-10 hover:bg-black transition duration-300 hover:text-white
+                        <a className="flex justify-center items-center text-xs border border-black text-black rounded-full w-44 h-10 my-10 hover:bg-black transition duration-300 hover:text-white md:text-base md:w-60
                         ">Go back to the Homepage</a>
                     </Link>
                 </>
